@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <style>
+      * {
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+        background-color: brown;
+        /* transition: 1s; */
+        overflow: hidden;
+      }
+      button {
+        width: 80px;
+        height: 30px;
+        border: none;
+        border-radius: 40px;
+        background-color: burlywood;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-box">
+      <button class="right">right</button>
+      <button class="left">left</button>
+      <button class="bottom">bottom</button>
+      <button class="top">top</button>
+      <button class="all">ALL</button>
+      <h1>한글은 아름다운 글입니다.</h1>
+    </div>
+    <script src="./scripts/jquery-3.7.1.min.js"></script>
+    <!-- <script>
+      $(".right").on("click", function () {
+        $("h1").animate({ marginLeft: "500px" }, 1000, "linear", function () {
+          console.log("animate 완료");
+        });
+      });
+      $(".left").on("click", function () {
+        $("h1").animate({ marginLeft: "0px" }, 1000, "linear", function () {
+          console.log("animate 완료");
+        });
+      });
+      $(".bottom").on("click", function () {
+        $("h1").animate({ marginTop: "200px" }, 1000, "linear", function () {
+          console.log("animate 완료");
+        });
+      });
+      $(".top").on("click", function () {
+        $("h1").animate({ marginTop: "0px" }, 1000, "linear", function () {
+          console.log("animate 완료");
+        });
+      });
+    </script> -->
+    <!-- <script>
+      $(".all").on("click", function () {
+        $("h1")
+          .animate({ marginLeft: "500px" }, 1000, function () {
+            console.log("animate 완료");
+          })
+          .animate({ marginLeft: "0px" }, 1000, function () {
+            console.log("animate 완료");
+          })
+          .animate({ marginTop: "500px" }, 1000, function () {
+            console.log("animate 완료");
+          })
+          .animate({ marginTop: "0px" }, 1000, function () {
+            console.log("animate 완료");
+          });
+      });
+    </script> -->
+    <script>
+      // callback hell(콜백 지옥)
+      $(".all").on("click", function () {
+        // this => .all
+        $("h1").animate({ marginLeft: "500px" }, 1000, "linear", function () {
+          //this => h1
+          $(this).animate({ marginLeft: "0px" }, 1000, "linear", function () {
+            //this => h1
+            $(this).animate(
+              { marginTop: "500px" },
+              1000,
+              "linear",
+              function () {
+                //this => h1
+                $(this).animate(
+                  { marginTop: "0px" },
+                  1000,
+                  "linear",
+                  function () {
+                    console.log("animate 완료");
+                  }
+                );
+              }
+            );
+          });
+        });
+        //this => .all
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <style>
+      * {
+        background-color: #f5f5f5;
+      }
+      .main-box {
+        width: 500px;
+        margin: auto;
+      }
+      h1 {
+        width: 200px;
+        height: 200px;
+        background-color: brown;
+        /* 동작이 이상해짐 */
+        /* transition: 1s; */
+      }
+      button {
+        width: 80px;
+        height: 30px;
+        border: none;
+        border-radius: 40px;
+        background-color: burlywood;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-box">
+      <button class="slideUp">slideUp</button>
+      <button class="slideDown">slideDown</button>
+      <button class="slideToggle">slideToggle</button>
+      <h1>한글은 아름다운 글입니다.</h1>
+    </div>
+    <script src="./scripts/jquery-3.7.1.min.js"></script>
+    <script>
+      // hegiht 제어
+      // height 가 기본적으로 있어야된다
+      // => css에 height가 꼭 있어야되는게 아니고 기본 높이가 있어야된다 뜻(0px X)
+      $(".slideUp").on("click", function () {
+        // overflow : hidden , padding, margin, hegiht값이 전부 바뀜
+        $("h1").slideUp();
+      });
+      $(".slideDown").on("click", function () {
+        $("h1").slideDown();
+      });
+      $(".slideToggle").on("click", function () {
+        $("h1").slideToggle();
+      });
+      // front end(data 처리 => node.js)
+      // node.js => npm도구, js실행
+    </script>
+  </body>
+</html>

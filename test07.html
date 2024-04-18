@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <style>
+      * {
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+        background-color: brown;
+        /* transition: 1s; */
+        overflow: hidden;
+      }
+      button {
+        width: 80px;
+        height: 30px;
+        border: none;
+        border-radius: 40px;
+        background-color: burlywood;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-box">
+      <button class="slideUp">slideUp</button>
+      <button class="slideDown">slideDown</button>
+      <button class="slideToggle">slideToggle</button>
+      <h1>한글은 아름다운 글입니다.</h1>
+    </div>
+    <script src="./scripts/jquery-3.7.1.min.js"></script>
+    <script>
+      // width()/height() 제어
+      $(".slideUp").on("click", function () {
+        // overflow : hidden , padding, margin, hegiht값이 전부 바뀜
+        $("h1").slideUp(function () {
+          alert("animation 완료");
+        });
+      });
+      $(".slideDown").on("click", function () {
+        $("h1").slideDown(function () {
+          alert("animation 완료");
+        });
+      });
+    </script>
+  </body>
+</html>

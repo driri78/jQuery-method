@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <style>
+      #accordion {
+        width: 500px;
+        margin: 50px;
+      }
+
+      h3 {
+        line-height: 50px;
+        padding: 0 1rem;
+        background-color: antiquewhite;
+        cursor: pointer;
+      }
+      h3.active {
+        background-color: black;
+        color: white;
+      }
+      #accordion > div {
+        /* height: 0; */
+        overflow: hidden;
+        box-sizing: border-box;
+
+        /* transition: 0.4s; */
+      }
+      #accordion > div > p {
+        padding: 15px;
+      }
+
+      #accordion > div.active {
+        height: 150px;
+        border-right: 1px solid black;
+        border-left: 1px solid black;
+      }
+      #accordion > div:last-child.active {
+        border-bottom: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="accordion">
+      <h3>Section 1</h3>
+      <div>
+        <p>
+          Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam.
+          Integer ut neque. Vivamus nisi metus, molestie vel, gravida in,
+          condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi.
+          Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu
+          ante scelerisque vulputate.
+        </p>
+      </div>
+      <h3>Section 2</h3>
+      <div>
+        <p>
+          Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+          purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis
+          porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non
+          quam. In suscipit faucibus urna.
+        </p>
+      </div>
+      <h3>Section 3</h3>
+      <div>
+        <p>
+          Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque
+          lobortis. Phasellus pellentesque purus in massa. Aenean in pede.
+          Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed
+          commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis
+          leo purus venenatis dui.
+        </p>
+        <ul>
+          <li>List item one</li>
+          <li>List item two</li>
+          <li>List item three</li>
+        </ul>
+      </div>
+      <h3>Section 4</h3>
+      <div>
+        <p>
+          Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+          et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+          faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+          mauris vel est.
+        </p>
+        <p>
+          Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat
+          lectus. Class aptent taciti sociosqu ad litora torquent per conubia
+          nostra, per inceptos himenaeos.
+        </p>
+      </div>
+    </div>
+    <script src="./scripts/jquery-3.7.1.min.js"></script>
+    <script>
+      $("h3 + div").hide();
+      $("h3").on("click", function () {
+        $("h3 + div").slideUp();
+        $(this).next().slideDown();
+      });
+    </script>
+  </body>
+</html>
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/common/publish/jquery-1.9.1.min.js"
+></script>
+<!--                                                                                                   prefixfree : 밴더프리픽스제어 -->
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/common/publish/prefixfree.min.js"
+></script>
+<!--                                                                                                  jQuery : slick 슬라이더 -->
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/common/publish/slick.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/common/publish/common.js?dumm=20240404001"
+></script>
+<script
+  type="text/javascript"
+  src="https://image.oliveyoung.co.kr/uploads/contents/OYEvt/lib/jquery.easypiechart.min.js"
+></script>
+<!--                                                                                            lottie-player -->
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/netfunnel/lottie-player.js?dumm=20240404001"
+></script>
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/netfunnel/netfunnel.js?dumm=20240404001"
+  charset="UTF-8"
+></script>
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/netfunnel/pc_skin.js?dumm=20240404001"
+  charset="UTF-8"
+></script>
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/common/common.utils.js"
+  charset="UTF-8"
+></script>
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/todaydelivery/todaydelivery.js"
+  charset="UTF-8"
+></script>
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/common/publish/jquery.mCustomScrollbar.concat.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://static.oliveyoung.co.kr/pc-static-root/js/common/publish/swiper.min.js"
+></script>
+
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
